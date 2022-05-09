@@ -46,11 +46,11 @@ class MovieData {
    String? description;
    String? language;
    MovieData.fromMap(Map<String, dynamic> json) {
-    this.poster = json["poster"];
-    this.name = json["name"];
-    this.genre = json["genre"];
-    this.description = json["description"];
-    this.language = json["language"];
+    poster = json["poster"];
+    name = json["name"];
+    genre = json["genre"];
+    description = json["description"];
+    language = json["language"];
   }
 }
 
@@ -66,11 +66,17 @@ class MovieItem {
   String? originalTitle;
 
   MovieItem.fromMap(Map<String, dynamic> json) {
-    this.rank = counter++;
-    this.data = MovieData.fromMap(json["data"][0]);
+    // rank = counter++;
+    data = MovieData.fromMap(json["data"][0]);
 
-    this.playDate = json["year"];
-    this.rating = json["doubanRating"];
-    this.originalTitle = json["originalName"];
+    playDate = json["year"];
+    rating = json["doubanRating"];
+    originalTitle = json["originalName"];
+  }
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return data?.name  ?? "" ;
   }
 }

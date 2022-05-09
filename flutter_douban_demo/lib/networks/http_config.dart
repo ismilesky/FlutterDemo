@@ -8,4 +8,6 @@ static const timeout = 5000;
 }
 
 
-
+class RequestConfig {
+  static const int reqCount = 20;
+}
