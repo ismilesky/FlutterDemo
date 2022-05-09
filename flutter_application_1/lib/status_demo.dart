@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 生命周期
 
 class StatusDemo extends StatefulWidget {
   StatusDemo() {
