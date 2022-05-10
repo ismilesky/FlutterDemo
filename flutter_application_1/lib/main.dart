@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listview_demo.dart';
 import 'package:flutter_application_1/monitoring_scroll.dart';
 import 'package:flutter_application_1/status_demo.dart';
+import 'package:provider/provider.dart';
 
+import 'Widget状态管理-InheritedWidget.dart';
+import 'Widget状态管理-Provider.dart';
 import 'Widget的key使用.dart';
 import 'base_widget.dart';
 import 'custom_scroll_view.dart';
@@ -11,7 +14,39 @@ import 'layout_demo.dart';
 import 'net_request.dart';
 
 void main() {
-  runApp(const APP ());
+  runApp(
+    // 在应用程序的顶层ChangeNotifierProvider
+    ChangeNotifierProvider(
+      create: (ctx) => CounterProvider(),
+      child: APP(),
+    )
+  );
+
+  /// 多个Provider
+  /// 1.嵌套， 不建议
+  // runApp(ChangeNotifierProvider(
+  //   create: (context) => CounterProvider(),
+  //   child: ChangeNotifierProvider(
+  //     create: (context) => UserProvider(),
+  //     child: APP()
+  //   ),
+  // ));
+  /// 2. MultiProvider
+  runApp(
+    MultiProvider(
+      providers: [
+       ChangeNotifierProvider(create: (ctx) => CounterProvider()),
+       ChangeNotifierProvider(create: (ctx) => UserProvider()),
+      ],
+     child: APP(),
+    ),
+  );
+
+
+
+
+
+  // runApp(const APP ());
 }
 
 
@@ -21,7 +56,7 @@ class APP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WidgetKeyDemo(),
+      home: ProviderDemo(),
       theme: ThemeData (
         primaryColor: Colors.blue
       ),

@@ -14,3 +14,5 @@ A new Flutter project.
 
 - widget的key的使用
 
+- widget状态管理  InheritedWidget/Provider 
+
