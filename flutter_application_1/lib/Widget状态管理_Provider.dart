@@ -215,10 +215,9 @@ class ShowDataWidget3 extends StatelessWidget {
   Widget build(BuildContext context) {
 
     print("ShowDataWidget3的build方法");
-
-    return Card(
+    return Container(
        color: Colors.green,
-       child:  Consumer2<CounterProvider, UserProvider>( // 多个Provider数据共享
+       child: Consumer2<CounterProvider, UserProvider>( // 多个Provider数据共享
          builder: ((context, counterProvider, userProvider, child) {
             print("ShowDataWidget3 Consumer build方法被执行");
             return Text("点击数据拼接 ${counterProvider.counter} , 昵称${userProvider.user.name}", style: TextStyle(fontSize: 20),);

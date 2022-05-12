@@ -16,3 +16,10 @@ A new Flutter project.
 
 - widget状态管理  InheritedWidget/Provider 
 
+- 路由管理 普通路由(跳转,传值)/命名路由(跳转,传值)/路由生成钩子(onGenerateRoute,onUnknownRoute)
+
+- 基础动画/交织动画/Hero 使用
+
+- 主题设置
+
+- 屏幕适配

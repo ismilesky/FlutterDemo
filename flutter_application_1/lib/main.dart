@@ -4,24 +4,29 @@ import 'package:flutter_application_1/monitoring_scroll.dart';
 import 'package:flutter_application_1/status_demo.dart';
 import 'package:provider/provider.dart';
 
-import 'Widget状态管理-InheritedWidget.dart';
-import 'Widget状态管理-Provider.dart';
+import 'Animation动画.dart';
+import 'Widget状态管理_InheritedWidget.dart';
+import 'Widget状态管理_Provider.dart';
 import 'Widget的key使用.dart';
 import 'base_widget.dart';
 import 'custom_scroll_view.dart';
 import 'grid_view_demo.dart';
 import 'layout_demo.dart';
 import 'net_request.dart';
+import 'router路由.dart';
+import 'theme.dart';
+import '事件监听.dart';
+import '屏幕适配.dart';
 
 void main() {
-  runApp(
-    // 在应用程序的顶层ChangeNotifierProvider
-    ChangeNotifierProvider(
-      create: (ctx) => CounterProvider(),
-      child: APP(),
-    )
-  );
-
+  // 使用provider打开
+  // runApp(
+  //   // 在应用程序的顶层ChangeNotifierProvider
+  //   ChangeNotifierProvider(
+  //     create: (ctx) => CounterProvider(),
+  //     child: APP(),
+  //   )
+  // );
   /// 多个Provider
   /// 1.嵌套， 不建议
   // runApp(ChangeNotifierProvider(
@@ -32,20 +37,28 @@ void main() {
   //   ),
   // ));
   /// 2. MultiProvider
-  runApp(
-    MultiProvider(
-      providers: [
-       ChangeNotifierProvider(create: (ctx) => CounterProvider()),
-       ChangeNotifierProvider(create: (ctx) => UserProvider()),
-      ],
-     child: APP(),
-    ),
-  );
+  // runApp(
+  //   MultiProvider(
+  //     providers: [
+  //      ChangeNotifierProvider(create: (ctx) => CounterProvider()),
+  //      ChangeNotifierProvider(create: (ctx) => UserProvider()),
+  //     ],
+  //    child: APP(),
+  //   ),
+  // );
+
+   
+  // 主题相关 打开
+  // runApp(ThemeDemo());
+
+  // 屏幕适配 打开
+  runApp(ScreenAdaptDemo());
+
+  // 路由界面 打开
+  // runApp(RouterAPP());
 
 
-
-
-
+  // 默认操作
   // runApp(const APP ());
 }
 
@@ -56,7 +69,7 @@ class APP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProviderDemo(),
+      home: AnimationDemo(),
       theme: ThemeData (
         primaryColor: Colors.blue
       ),
