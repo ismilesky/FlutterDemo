@@ -2,7 +2,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main.dart';
 
 class ScreenAdaptDemo extends StatelessWidget {
 
@@ -28,7 +27,7 @@ class ScreenAdaptDemo extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Colors.blue, splashColor: Colors.transparent),
-      home: Home(),
+      home: HomePage(),
     );
   }
 }
