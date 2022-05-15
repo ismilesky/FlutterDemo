@@ -1,0 +1,4 @@
+
+extension StringUtil on String {
+   
+}
