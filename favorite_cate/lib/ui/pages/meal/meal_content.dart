@@ -10,11 +10,12 @@ import 'package:favorite_cate/core/model/meal_model.dart';
 import 'package:favorite_cate/core/viewmodels/meal_view_model.dart';
 import 'package:favorite_cate/ui/widgets/meal_item.dart';
 
+import '../tip/no_data.dart';
+
 class FCMealContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   print('FCMealContent build');
 
     final item = ModalRoute.of(context)?.settings.arguments as FCCategoryModel;
 
@@ -27,7 +28,10 @@ class FCMealContent extends StatelessWidget {
       },
       shouldRebuild: (prev, next) => !ListEquality().equals(prev, next),
       builder: (ctx, meals, child) {
-        print('Selector<FCMealViewModel, List<FCMealModel>> 刷新数据');
+
+        if (meals.isEmpty) {
+           return FCNoDataScreen();
+        }
 
         return ListView.builder(
           itemCount: meals.length,
