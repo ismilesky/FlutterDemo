@@ -4,10 +4,11 @@ import 'package:flutter_application_1/monitoring_scroll.dart';
 import 'package:flutter_application_1/status_demo.dart';
 import 'package:provider/provider.dart';
 
-import 'Animation动画.dart';
-import 'Widget状态管理_InheritedWidget.dart';
-import 'Widget状态管理_Provider.dart';
-import 'Widget的key使用.dart';
+import 'Animation/Animation动画.dart';
+import 'i18n/internation.dart';
+import 'widget状态管理/Widget状态管理_InheritedWidget.dart';
+import 'widget状态管理/Widget状态管理_Provider.dart';
+import 'widget状态管理/Widget的key使用.dart';
 import 'base_widget.dart';
 import 'custom_scroll_view.dart';
 import 'grid_view_demo.dart';
@@ -52,11 +53,13 @@ void main() {
   // runApp(ThemeDemo());
 
   // 屏幕适配 打开
-  runApp(ScreenAdaptDemo());
+  // runApp(ScreenAdaptDemo());
 
   // 路由界面 打开
   // runApp(RouterAPP());
 
+  // 国际化 打开
+  runApp(InternationAPP());
 
   // 默认操作
   // runApp(const APP ());

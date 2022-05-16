@@ -1,0 +1,12 @@
+{
+    "en": {
+      "title": "international",
+      "label": "text ",
+      "tip": "click"
+    },
+    "zh": {
+      "title": "国际化",
+      "label": "text 文本",
+      "tip": "点击按钮"
+    }
+}

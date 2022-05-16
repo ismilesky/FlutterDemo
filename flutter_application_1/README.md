@@ -23,3 +23,5 @@ A new Flutter project.
 - 主题设置
 
 - 屏幕适配
+
+- 国际化
